@@ -44,3 +44,6 @@ Style/AsciiComments:
 
 Style/Documentation:
   Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
