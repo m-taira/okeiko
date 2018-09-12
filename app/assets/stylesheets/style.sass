@@ -1,0 +1,228 @@
+
+/* CSS Document */
+
+$text-color: #707070
+$base-color: #ff8c56
+$name-text-color: #0076ff
+$result-border-color: #9a3535
+$result-background-color: #f7e7e7
+$label-color: #fecc5a
+$label-text-color: #ffffff
+$base-line-color: #e0e0e0
+$detail-name-background-color: $name-text-color
+$detail-name-color: #ffffff
+
+@mixin base-drop-shadow
+  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.2))
+
+*
+  box-sizing: border-box
+
+body
+  font-size: 16px
+  font-family: 'system-ui', '-apple-system', 'Avenir Next', Verdana, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif
+
+.container
+//max-width: 720px
+
+.top-container
+  height: 100vh
+  width: 100vw
+  background-image: image-url("hero-image.jpg")
+  background-size: cover
+  background-position: center
+
+.top-container-opacity
+  height: 100vh
+  width: 100vw
+  background: rgba(255,255,255,0.5)
+
+.site-title
+  font-size: 4rem
+  width: 100%
+  text-align: center
+  color: $text-color
+  padding-top: 100px
+
+.sub-title
+  font-size: 0.9rem
+  text-align: center
+  width: 100%
+  color: $text-color
+  padding-top: 30px
+
+.form-container
+  margin-top: 50px
+
+.cp_ipselect
+  overflow: hidden
+  width: 100%
+  margin: 2rem 0
+  text-align: center
+
+.cp_ipselect select
+  width: 100%
+  padding-right: 1em
+  cursor: pointer
+  text-indent: 0.01px
+  text-overflow: ellipsis
+  border: none
+  outline: none
+  background: transparent
+  background-image: none
+  box-shadow: none
+  -webkit-appearance: none
+  appearance: none
+
+.cp_ipselect select::-ms-expand
+  display: none
+
+.cp_ipselect.cp_sl04
+  position: relative
+  border: 1px solid $text-color
+  border-radius: 50px
+  background: #ffffff
+
+.cp_ipselect.cp_sl04::before
+  position: absolute
+  top: 0.8em
+  right: 0.8em
+  width: 0
+  height: 0
+  padding: 0
+  content: ''
+  border-left: 6px solid transparent
+  border-right: 6px solid transparent
+  border-top: 6px solid $text-color
+  pointer-events: none
+  font-size: 1.3rem
+
+.cp_ipselect.cp_sl04 select
+  padding: 8px 38px 8px 28px
+  color: $text-color
+  font-size: 1.3rem
+
+.form-container
+  margin: 0 2rem
+
+.search-button
+  border-radius: 30px
+  font-size: 1.3rem
+  text-align: center
+  padding: 10px 20px
+  color: #FFFFFF
+  background: #FF8c56
+  width: 100%
+  transition    : .3s
+
+header
+  height: 48px
+  background-color: $base-color
+  color: white
+  font-size: 2rem
+  text-align: center
+  line-height: 1.4
+
+.result-count
+  width: 350px
+  margin: 20px auto
+  border: solid 2px $result-border-color
+  background-color: $result-background-color
+  padding: 10px
+  color: $text-color
+  font-size: 1.1rem
+  text-align: center
+
+.thumbnail
+  width: 100%
+  height: 100%
+
+.result-item
+  margin: 10px
+  border: 1px solid $base-line-color
+  width: calc(100% - 20px)
+  background-color: white
+  @include base-drop-shadow
+
+
+.result-thumb
+  width: 100%
+
+.result-item-container
+  width: calc(100% / 3 * 2)
+  margin-left: 20px
+
+.result-item-name
+  color: $name-text-color
+  font-size: 1.2rem
+  margin: 10px
+
+.result-item-category
+  font-size: 0.9rem
+  margin: 10px
+
+.result-item-detail
+  display: flex
+  flex-wrap: wrap
+  & dt,dd
+    margin: 10px 0
+    font-size: 10px
+  & dt
+    text-align: center
+    width: 30%
+    background-color: $label-color
+    color: $label-text-color
+    padding: 3px
+  & dd
+    width: 70%
+    padding: 3px
+
+.detail-image
+  width: 100%
+
+.school-name
+  background-color: $detail-name-background-color
+  color: $detail-name-color
+  font-size: 1.5rem
+  padding: 10px
+
+.school-category
+  padding: 10px
+  color: $text-color
+
+.school-detail
+  display: flex
+  flex-wrap: wrap
+  padding: 10px
+  & dt,dd
+    margin: 10px 0
+    font-size: 10px
+  & dt
+    text-align: center
+    width: 70px
+    background-color: $label-color
+    color: $label-text-color
+    padding: 3px
+  & dd
+    padding-right: 30px
+    width: 70%
+    padding: 3px
+
+.school-description
+  font-size: 1.1rem
+  padding: 10px
+  line-height: 1.5
+  color: $text-color
+
+.tel-button
+  text-decoration: none
+  text-align: center
+  width: 50%
+  display: block
+  margin: 50px auto
+  background-color: $base-color
+  color: white
+  font-size: 2rem
+  border: 5px solid white
+  border-radius: 50px
+  padding: 15px 20px
