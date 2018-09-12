@@ -1,0 +1,45 @@
+version: '3'
+services:
+  web:
+    build: ./docker/web/.
+    environment:
+      TZ: Japan
+    depends_on:
+    - app
+    ports:
+    - 443:443
+    volumes:
+    - ./docker/web/logs:/root/logs
+  #smtp:
+  #  image: schickling/mailcatcher
+  #  ports:
+  #  - "1080:1080"
+  #  - "1025:1025"
+  # environment:
+  #   TZ: Japan
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      TZ: Japan
+    volumes:
+    - okeiko-data:/var/lib/mysql
+    - ./docker/db/sql:/tmp/sql
+  app:
+    build: ./docker/app/.
+    environment:
+      TZ: Japan
+    # command: bash -c "bundle install && rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    depends_on:
+    - db
+    ports:
+    - "3000:3000"
+    stdin_open: true
+    tty: true
+    volumes:
+    - .:/okeiko:cached,rw
+    working_dir: /okeiko
+    user: okeiko
+volumes:
+  okeiko-data:
+    external: true
