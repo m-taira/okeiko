@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SchoolDecorator < ApplicationDecorator
   delegate_all
 
@@ -23,6 +25,6 @@ class SchoolDecorator < ApplicationDecorator
   end
 
   def category_name
-    category.self_and_ancestors.map {|c| c.name }.join(' > ')
+    category.self_and_ancestors.map(&:name).join(' > ')
   end
 end
