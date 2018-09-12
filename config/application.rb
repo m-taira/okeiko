@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module Okeiko
   class Application < Rails::Application
+    # デフォルトテンプレートエンジン
+    config.generators.template_engine = :slim
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
