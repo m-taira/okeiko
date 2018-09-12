@@ -18,8 +18,10 @@ $detail-name-color: #ffffff
 *
   box-sizing: border-box
 
+html
+  font-size: 62.5%
+
 body
-  font-size: 16px
   font-family: 'system-ui', '-apple-system', 'Avenir Next', Verdana, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif
 
 .container
@@ -116,66 +118,82 @@ body
   transition    : .3s
 
 header
-  height: 48px
+
   background-color: $base-color
   color: white
-  font-size: 2rem
+  font-size: 4rem
   text-align: center
   line-height: 1.4
 
 .result-count
-  width: 350px
+  width: calc(100% - 100px)
   margin: 20px auto
   border: solid 2px $result-border-color
   background-color: $result-background-color
-  padding: 10px
+  padding: 20px
   color: $text-color
-  font-size: 1.1rem
+  font-size: 4.2rem
   text-align: center
 
 .thumbnail
   width: 100%
   height: 100%
+  object-fit: cover
 
 .result-item
-  margin: 10px
+  margin: 50px
   border: 1px solid $base-line-color
-  width: calc(100% - 20px)
+  width: calc(100% - 100px)
   background-color: white
   @include base-drop-shadow
-
+  font-size: 0px
 
 .result-thumb
   width: 100%
 
 .result-item-container
-  width: calc(100% / 3 * 2)
-  margin-left: 20px
+  width: 100%
+  padding-left: 20px
 
 .result-item-name
-  color: $name-text-color
-  font-size: 1.2rem
-  margin: 10px
+  background-color: $detail-name-background-color
+  color: $detail-name-color
+  font-size: 4.8rem
+  padding: 20px 30px
+  margin-left: -20px
 
 .result-item-category
-  font-size: 0.9rem
-  margin: 10px
+  font-size: 3.2rem
+  margin: 30px 0
 
 .result-item-detail
   display: flex
   flex-wrap: wrap
   & dt,dd
-    margin: 10px 0
-    font-size: 10px
+    margin: 30px 0
+    font-size: 3.2rem
   & dt
     text-align: center
     width: 30%
     background-color: $label-color
     color: $label-text-color
-    padding: 3px
+    padding: 10px 0
   & dd
     width: 70%
-    padding: 3px
+    padding: 10px 30px
+
+.result-button
+  text-decoration: none
+  text-align: center
+  width: 80%
+  display: block
+  margin: 50px auto
+  background-color: $base-color
+  color: white
+  font-size: 6.4rem
+  border-radius: 25px
+  padding: 30px 50px
+  @include base-drop-shadow
 
 .detail-image
   width: 100%

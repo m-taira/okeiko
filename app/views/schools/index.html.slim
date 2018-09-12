@@ -1,2 +1,20 @@
-h1 Schools#index
-p Find me in app/views/schools/index.html.slim
+.container
+  header.header
+    p.site-name おけいこ
+
+  .content
+    p.result-count = "#{@schools.count}件のならいごとが見つかりました。"
+    section.result-list
+      - @schools.each do |school|
+        article.result-item
+            .result-thumb
+              = school.thumb
+            .result-item-container
+              p.result-item-name = school.name
+              p.result-item-category = school.category_name
+              dl.result-item-detail
+                dt 対象年齢
+                dd = school.target_age
+                dt 料金の目安
+                dd = school.price
+              = link_to '詳しく見る', school, class: 'result-button'
