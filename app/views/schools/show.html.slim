@@ -1,1 +1,33 @@
-p show
+.container
+  header.header
+    p.site-name おけいこ
+  .content
+    article.detail-container
+      .detail-image
+        = @school.thumb
+      .lesson-detail
+        p.school-name パソコン教室 パソノワ
+        p.school-category コンピュータ・科学 &gt; プログラミング
+        dl.school-detail
+          dt 住所
+          dd 三木市西自由が丘1丁目555−3サンテラス志染3F
+          dt 電話番号
+          dd 0749-88-6686
+          dt 営業日
+          dd 月、火、水、木、金、土
+          dt 営業時間
+          dd 10:00 〜 17:00
+          dt 対象年齢
+          dd 8歳 〜 12歳
+          dt 料金の目安
+          dd 4000円 〜 12000円
+          dt HP
+          dd https://pasonowa.com/
+        p.school-description
+        | パソノワは「パソコンの輪」「パーソン（人）の輪」を作っていきたいという意味を込めてオープンしたパソコン教室です。人と人のつながりを大切にしています。パソコンだけではなく、スマートフォン、タブレットなどの指導も行っています。デジタル機器のお困りごとなどありましたらお気軽にご相談ください。
+        br
+        br
+        | パソノワは「パソコンの輪」「パーソン（人）の輪」を作っていきたいという意味を込めてオープンしたパソコン教室です。人と人のつながりを大切にしています。パソコンだけではなく、スマートフォン、タブレットなどの指導も行っています。デジタル機器のお困りごとなどありましたらお気軽にご相談ください。
+iframe[src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3276.9134744904522!2d135.00538408012633!3d34.78295348050944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600078af8628fe07%3A0xeccc7c2dc83f8947!2z44OR44K944Kz44Oz5pWZ5a6kIOODkeOCveODjuODrw!5e0!3m2!1sja!2sjp!4v1536647576424" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen]
+.action-box
+= link_to '電話で問い合わせる', 'telto:0794886686', class: 'tel-button'
